@@ -1,0 +1,18 @@
+{
+    "name": "ashtaev/pagination",
+    "keywords": ["paginator", "pagination", "pager"],
+    "homepage": "http://github.com/ashtaev/php-pagination",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vladislav Ashtaev",
+            "email": "vl.ashtaev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7"
+    },
+    "autoload": {
+        "psr-0": {"ashtaev": "src/"}
+    }
+}
