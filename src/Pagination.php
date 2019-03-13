@@ -20,7 +20,7 @@ class Pagination {
 
 
     private static function enable(String $path, $i) {
-        echo "\t\t" . '<li class="page-item"><a class="page-link" href="' . self::url($path, $i) . '">' . $i . '</a></li>' . PHP_EOL;
+        echo "\t\t" . '<li class="page-item"><a class="page-link" href="' . static::url($path, $i) . '">' . $i . '</a></li>' . PHP_EOL;
     }
 
 
