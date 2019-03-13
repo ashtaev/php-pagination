@@ -1,5 +1,7 @@
 {
     "name": "ashtaev/pagination",
+    "type": "library",
+    "description": "Простой PHP скрипт для создания постраничной навигации.",
     "keywords": ["paginator", "pagination", "pager"],
     "homepage": "http://github.com/ashtaev/php-pagination",
     "license": "MIT",
@@ -13,6 +15,6 @@
         "php": ">=7"
     },
     "autoload": {
-        "psr-0": {"ashtaev": "src/"}
+        "psr-4": {"ashtaev\\": "src/"}
     }
 }

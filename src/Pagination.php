@@ -117,9 +117,7 @@ class Pagination {
         return 0;
     }
 
-    private static function url($path, $i = 1) {
-
-        return $path/$i;
+    protected static function url($path, $i = 1) {
 
     }
 
