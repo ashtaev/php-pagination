@@ -4,34 +4,24 @@ namespace ashtaev;
 
 class Pagination {
 
-
-    private static function head() {
-        echo '<!-- Pagination -->' . PHP_EOL;
-        echo '<nav aria-label="Page navigation example">' . PHP_EOL;
-        echo "\t" . '<ul class="pagination my-4">' . PHP_EOL;
-    }
-
+    public static $pages = [];
 
 
     private static function disable(String $i) {
-        echo "\t\t" . '<li class="page-item disabled"><a class="page-link" href="#">' . $i . '</a></li>' . PHP_EOL;
+        $pp['num'] = $i;
+        $pp['url'] = false;
+        self::$pages[] = $pp;
     }
 
 
 
     private static function enable(String $path, $i) {
-        echo "\t\t" . '<li class="page-item"><a class="page-link" href="' . static::url($path, $i) . '">' . $i . '</a></li>' . PHP_EOL;
+        $pp['num'] = $i;
+        $pp['url'] = static::url($path, $i);
+        self::$pages[] = $pp;
     }
 
 
-
-    private static function footer() {
-        echo "\t" . '</ul>' . PHP_EOL;
-        echo '</nav>' . PHP_EOL;
-        echo '<!--// Pagination -->' . PHP_EOL;
-    }
-    
-    
 
     public static function run(Int $total, Int $list, Int $page, String $path, Int $size = 6) {
 
@@ -39,8 +29,6 @@ class Pagination {
         $link = $total % $list == 0 ? $link = $total/$list : $link = ceil($total/$list);
 
         if ($link === 1) return 0;
-
-        self::head();
 
         $x = $size;
 
@@ -112,10 +100,11 @@ class Pagination {
                 }
             }
         }
-        self::footer();
 
-        return 0;
+        return self::$pages;
     }
+
+
 
     protected static function url($path, $i = 1) {
 
