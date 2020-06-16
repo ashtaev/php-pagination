@@ -1,0 +1,11 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination my-4">
+        {% for page in pages %}
+            {% if page.url == false %}
+                <li class="page-item disabled"><a class="page-link" href="#">{{ page.num }}</a></li>
+            {% else %}
+                <li class="page-item"><a class="page-link" href="{{ page.url }}">{{ page.num }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
